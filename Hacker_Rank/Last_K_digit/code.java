@@ -8,37 +8,20 @@ public class Main
 		
 		int size=number.length();
 		
-		int pr=s.nextInt();
+		int pr=size-s.nextInt();
 		
 		if(pr>0)
 		{
-		
-		int tot=size;
-		
-		for(int i=0;i<size;i++)
-		{
-		    
-		    if(pr==tot)
-		    { 
-		        System.out.println(number.substring(i,size));
-		        break;
-		        
-		    }
-		    else
-		    { 
-		        
-		        tot--;
-		        
-		    }
-		    
+		   System.out.println(number.substring(pr,size));
+		 
 		}
-	}
-	else
-	{ 
+
+	    else
+	    { 
 	    
 	    System.out.println(number);
 	    
-	}
+	    }
 	    
 	}
 }
