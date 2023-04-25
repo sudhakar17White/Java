@@ -1,0 +1,64 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package skill_rack;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author sudhakar
+ */
+public class Series_com {
+
+    static int check(int num,int n1,int n2)
+    {//System.out.println(num);
+        int c=0;
+        while(num!=0)
+        {
+            int a=num%10;
+            if(a==n1||a==n2)
+            {   
+                num=num/10;
+            }
+            else
+            {
+                c=1;
+                break;
+            }
+        }
+        if(c==0)
+        {   //System.out.println("*");
+            return 1;
+        }
+        return 0;
+    }
+    public static void main(String[] args) {
+        // TODO code application logic here
+            Scanner s=new Scanner(System.in);
+            int n1=s.nextInt();
+            int n2=s.nextInt();
+            int len=s.nextInt();
+            for(int i=1;i<=len;i++)
+            {
+                if(i%2!=0)
+                {
+                    if(i==n1||i==n2)
+                    {
+                        System.out.println(i);
+                    }
+                    else
+                    {
+                        int ar=check(i,n1,n2);
+                        if(ar==1)
+                            System.out.println(i);
+                    }
+                }
+            }
+            
+            
+        
+    }
+    
+}
