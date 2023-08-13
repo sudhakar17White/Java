@@ -1,0 +1,42 @@
+Best Partition
+ 
+You are given an array of positive numbers of size N and an integer K. You need to partition the array into K continuous segments. For each segment, the sum of its elements needs to be calculated.
+The segment with the minimum sum is called the bestSegment and the sum of the elements of the bestSegment is called the bestSum.
+
+For all possible combinations of partitions of the array when divided into K segments, their bestSum needs to be calculated and the one among them with maximum value needs to be returned.
+ 
+Input Specification:
+input1: ​an array of N positive numbers
+input2: an integer N denoting the length of the array
+input3: ​an integer K
+
+Output Specification:
+Return an integer denoting the maximum value of all possible bestSum.
+
+ 
+Example 1:
+input1: {1,2,3,4}
+input2: 4
+input3: 2
+ 
+Output : 4
+
+Explanation:
+You can partition the given array into 2 continuous segments in the following manner-
+1 2 3 | 4 - the sum of individual segments is {6,4} and the bestSum is 4
+1 2 | 3 4 - the sum of individual segments is {3,7} and the bestSum is 3
+1 | 2 3 4 - the sum of individual segments is {1,9} and the bestSum is 1
+​​​The maximum value of bestSum among {4,3,1} is 4. So, 4 will be returned as the answer.
+
+ 
+Example 2:
+input1: {5,6,6,8} 
+input2: 4 
+input3: 4    
+ 
+Output : 5
+
+Explanation:
+You can partition the given array into 4 continuous segments only in one way-
+5 | 6 | 6 | 8 - The sum of individual segments is {5,6,6,8} and the bestSum is 5.
+​​​Since the only value of bestSum is 5, it will be returned as the answer.
