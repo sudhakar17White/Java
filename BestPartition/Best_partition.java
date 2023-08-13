@@ -3,8 +3,8 @@ import java.util.*;
 public class Best_partition {
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
-        int ar[]={5,6,6,8};
-        int len=4;
+        int ar[]={1,2,3,4}; //Input for array 
+        int len=2; //len of sub
         if(ar.length==len)
         {
             int min=ar[0];
