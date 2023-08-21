@@ -1,0 +1,61 @@
+Transform ​Codes 
+Given an integer array input1[], function transformCodes returns a String array by following the below steps: 
+Step A) For each number in the array, do the following and produce a  String equivalent:  
+Let "answer" be an empty String. 
+Let "n" be the current element from the array. 
+Step A1) Check whether the length of n is 6. If so, concatenate "C" to answer. 
+Else, concatenate "W" to answer.
+Step A2) Check whether n satisfies any of the following four conditions: 
+if n is 0, then concatenate alphabet "Z" to answer;
+if n is 1, then concatenate alphabet "O" to answer;
+if n is a Prime number, concatenate alphabet "P" to answer;
+if n is not a Prime number, concatenate alphabet "N" to answer;
+                                              
+Step A3) Find the sum of all the individual digits in "n",  till the sum becomes a "single digit". 
+Concatenate that single digit sum to the answer.
+Step A4) If n is "even" number, find (n/2) and concat it to the answer.  
+Else, find (n-1)/2 and concat it to the answer.
+Step B) Now, We need to accumulate all the answers from StepA4 in one String array and return the same. 
+Assumptions:
+1) All the numbers in the input1 array will be >=2.
+2) input1 array will have minimum one element in it.
+3) Output array size should be equal to input array size. 
+4) Input and output are case sensitive. 
+Note: 
+1) Prime number series is 2,3,5,7,11,13...etc  
+2) 0 and 1 are neither prime nor composite.
+Function Prototype: String[] transformCodes(int[] input1)
+Sample Input/Output-1:   
+input1[] = {12} 
+output[] = {"WN36"}
+Explanation: Lets consider the first number from the input1 array.
+   Step A1:   Initially answer="" and n=12. Length of n is not 6. So, answer="W";
+   Step A2:   12 is not a prime number. So, concatenate "N" to answer. Now, answer="WN"; 
+   Step A3:   Lets find the sum of digits till it becomes a single digit. 
+                    1+2= 3. So, concatenate "3" to answer. Now, answer="WN3"; 
+   Step A4:   n= 12 is an even number. So, n/2= 6. Concatenate this value to answer. Now, answer =  "WN36".
+Finally, the resulting String array is {"WN36"}.  We need to return this array.
+ 
+Sample Input/Output-2:     
+input1[] ={123456,1234567} 
+output[] = {"CN361728", "WN1617283"}
+Explanation:  Lets consider the first number from the input1 array.
+    Step A1:  Initially answer="" and n= 123456. Length of n is 6. So, answer="C";
+    Step A2:  n is not a prime number. So, concatenate "N" to answer. Now, answer="CN"; 
+    Step A3:  Lets find the sum of digits till it becomes a single digit.  
+                    1+2+3+4+5+6 = 21 which is a two digit number. So, let us find the sum of the digits in 21. 
+                    That is, 2+1 = 3 which is a single digit number. So, concatenate "3" to answer. Now, answer="CN3";
+    Step A4:  n= 123456 is an even number. So, n/2= 61728. Concatenate this value to answer. 
+                    Answer for the first number is "CN361728". 
+Lets consider the second number from the input1 array.
+  Step A1:  Initially answer="" and n=1234567. Length of n is 7. So, answer="W";
+  Step A2:  n is not a prime number. So, concatenate "N" to answer. Now, answer="WN"; 
+  Step A3:  Lets find the sum of digits till it becomes a single digit.   
+                  1+2+3+4+5+6+7 = 28 which is a two digit number. So, let us find the sum of digits in 28. 
+                  That is, 2+8 = 10 which is also a two digit number. 
+                  Let us again find the sum of digits in 10. That is, 1+0 =1 which is a single digit number.  
+                  So, concatenate "1" to answer. Now, answer="WN1";
+  Step A4:  n=123457 is an odd number. So, (n-1)/2= 617283. 
+                  Concatenate this value to answer. Answer for the second number is "WN1617283".   
+Finally, We need to accumulate result for each of the input number. 
+Hence, the resulting String array is {"CN361728", "WN1617283"}.  We need to return this array.
