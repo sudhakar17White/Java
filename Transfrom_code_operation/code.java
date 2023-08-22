@@ -1,76 +1,48 @@
-package Transfrom_code_operation;
 import java.util.*;
 public class code {
-    static int di(int d)
-    {
-        int n=0;
-        while(d!=0)
-        {
-            d=d/10;
-            n++;
-        }
-        return n;
-    }
-    static int isprime(int n)
-    {
-        int i,m=0,flag=0;      
-  m=n/2;      
-  if(n==0||n==1){  
-        
-  }else{  
-   for(i=2;i<=m;i++){      
-    if(n%i==0){      
-          
-     flag=1;      
-     break;      
-    }      
-   }      
-   if(flag==0) 
-    { 
-    return 1; 
-    }  
-  }
-return 0;
-}
-static int sum(int num)
-{
-    int sum=0;
-    while(num!=0)
-    {
-        int a=num%10;
-        sum=sum+a;
-        num=num/10;
-    }
-    return sum;
-}
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
-        int num[]={12};
-        String ans="";
-            if(di(num[0])==6)
+        String one=s.nextLine();
+        String two=s.nextLine();
+        int num=s.nextInt();
+        int ni=s.nextInt();
+        String n=String.valueOf(num);
+        StringBuilder re=new StringBuilder(n);
+        re.reverse();
+        if(one.length()==two.length())
+        {
+            
+            for(int i=0;i<one.length();i++)
             {
-                ans=ans+"C";
-            }
-            else
-            {
-                ans=ans+"W";
-                //System.out.println(ans);
-                if(isprime(num[0])==1)
+                if(one.charAt(i)!=two.charAt(i))
                 {
-                    ans=ans+"P";
-                }
-                else
-                {
-                    ans=ans+"N";
-                    int nu=sum(num[0]);
-                    ans=ans+""+nu;
-                    if(num[0]%2==0)
+                    if((int)one.charAt(i)<(int)two.charAt(i))
                     {
-                        ans=ans+num[0]/2;
+                        System.out.println((""+one.charAt(ni-1)).toUpperCase()+two+n.charAt(ni-1)+re.charAt(ni-1));
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println((""+two.charAt(ni-1)).toUpperCase()+one+n.charAt(ni-1)+re.charAt(ni-1));
+                        break;
                     }
                 }
             }
-        
-        System.out.println(ans);
+            
+        }
+        else
+        {
+            
+            if(one.length()>two.length())
+            {
+                System.out.println(one.charAt(ni-1)+two+n.charAt(ni-1)+re.charAt(ni-1));
+            }
+            else
+            {
+                System.out.println(two.charAt(ni-1)+one+n.charAt(ni-1)+re.charAt(ni-1));
+                
+            }
+        }
+
     }
 }
