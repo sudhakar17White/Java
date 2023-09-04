@@ -1,0 +1,33 @@
+Question 1Section 1 General Purpose Programming - Question 1
+Revisit Later
+How to Attempt?
+Count The Vowels:
+Given a String input1 which is a single word of length n (n ranges from 1 to 20).
+You have to find whether input1 contains all the vowels { a,e,i,o,u } in it and
+all of them occurs only once. 
+If both conditions satisfies, you need to remove those { a,e,i,o,u } from input1 and
+return the output as "new word without {a,e,i,o,u } in it:length of the new word" . 
+If any one of the vowel is not found or it occurs more than once, 
+return the output as "reversed input1:ERROR".
+Note:
+1. input1 is always a single word with no spaces in it.
+2. input1 will contain only lowercase alphabets.
+3. output should be in uppercase.
+ 
+Example - 1
+input1: cauliflower
+output: CLFLWR:6  
+Explanation:  input1 has all the vowels { a,e,i,o,u } in it and everything occurs only once.                                                                                                                                                                                                    
+Example - 2
+input1: arsenious
+output: RSNS:4
+Explanation: input1 has all the vowels { a,e,i,o,u } in it and everything occurs only once.
+ 
+Example - 3
+input1: caesiious
+ouput: SUOIISEAC:ERROR
+Explanation: input1 has all the vowels { a,e,i,o,u } in it but 'i' occurs twice.
+ 
+Example - 4
+input1: abcdaaaa
+output: AAAADCBA:ERROR
